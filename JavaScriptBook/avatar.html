@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script>
+
+            // var avatar = "generic";
+            // var skill = 1.0;
+            // var pointsPerLevel = 1000;
+            // var userPoints = 2008;
+
+            // function getAvatar(points) {
+            //     var level = points / pointsPerLevel;
+
+            //     if (level == 0) {
+            //         return "Teddy bear";
+            //     } else if (level == 1) {
+            //         return "Cat";
+            //     } else  if (level >= 2) {
+            //         return "Gorilla";
+            //     }
+            // }
+
+            // function updatePoints(bonus, newPoints) {
+            //     var i = 0;
+            //     while (i < bonus) {
+            //         newPoints = newPoints + skill * bonus;
+            //         i = i + 1;
+            //     }
+            //     return newPoints + userPoints;
+            // }
+
+            // userPoints = updatePoints(2, 100);
+            // avatar = getAvatar(2112);
+            // console.log(avatar, userPoints);
+
+
+            function playTurn(player, location) {
+                var points = 0;
+                if (location == 1) {
+                    points = points + 100;
+                }
+                return points;
+            }
+            var total = playTurn("Jay", 1);
+            alert(total);
+
+
+
+
+        </script>
+    </head>
+    <body>
+        
+
+    </body>
+</html>

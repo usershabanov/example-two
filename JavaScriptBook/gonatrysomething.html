@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script>
+
+            function makeMoney(m) {
+                var weHaveAtm;
+
+                if (m > 50000) {
+                    weHaveAtm = "We have money for two months living";
+                    return weHaveAtm;
+
+                } else if (m <= 50000 && m > 5000) {
+                    weHaveAtm = "After one month I'm gonna live on the streat if not find a job";
+                    return weHaveAtm;
+
+                } else {
+                    weHaveAtm = "I'm living in the box";
+                    return weHaveAtm;
+                }
+                
+
+            }
+
+            var savings = 4999;
+            var needMore = makeMoney(savings);
+            alert(needMore);
+
+
+
+        </script>
+    </head>
+    <body>
+        
+
+    </body>
+</html>
