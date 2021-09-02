@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+
+        function combats() {
+            var player1 = ["Денис", "Орхан", "Ксения", "Надежда", "Сосед"];
+            var player2 = ["Рыба", "Тигр", "Улитка", "Путин", "Забор"];
+            var playerMove = ["Бьет в пах", "Промахивается", "Бьет с ноги", "Дает леща", "Целует"];
+
+            var rand1 = Math.floor(Math.random() * player1.length);
+            var rand2 = Math.floor(Math.random() * player2.length);
+            var rand3 = Math.floor(Math.random() * playerMove.length);
+
+            var phrase = player1[rand1] + " " + playerMove[rand3] + " " + player2[rand2];
+            alert(phrase);
+
+        }
+        combats();
+
+
+
+
+
+    </script>
+
+
+
+</head>
+<body>
+    
+</body>
+</html>
