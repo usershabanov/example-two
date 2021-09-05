@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+                      var scores = [60, 50, 88, 58, 54, 54, 58, 50, 52, 54, 48, 88,
+                                    34, 55, 51, 52, 44, 51, 57, 64, 88, 55, 52, 61,
+                                    46, 88, 57, 52, 44, 18, 35, 53, 55, 88, 51, 55];
+
+                      var costs = [.25, .27, .25, .25, .25, .25,
+                                   .33, .31, .25, .29, .27, .21,
+                                   .31, .25, .25, .33, .21, .25,
+                                   .33, .25, .28, .25, .24, .22,
+                                   .20, .25, .30, .25, .24, .25,
+                                   .25, .25, .27, .25, .26, .17];
+
+        function highScoreAndList(scores) {
+            var highScore = 0;
+            var output;
+            for (var i = 0; i < scores.length; i++) {
+                output = "Опыт №" + i + "равен: " + scores[i];
+                console.log(output);
+                if (scores[i] > highScore) {
+                    highScore = scores[i];
+                }
+            }
+            return highScore;
+        }
+        function bestSolutionsCount(scores, highscore) {
+            var tratra = [];
+            for (var i = 0; i < scores.length; i++) {
+                if (scores[i] == highscore) {
+                    tratra.push[i];
+                }
+            }
+            return tratra;
+        }
+        function whatsTheBest(scores, costs, bestScore) {
+            var cost = 200;
+            var index;
+            for (var i = 0; i < scores.length; i++) {
+                if (scores[i] == bestScore) {
+                    if (cost > costs[i]) {
+                        cost = costs[i];
+                        index = i;
+                    }
+                }
+            }
+            return index;
+        }
+        var highScore = highScoreAndList(scores);
+        var forBestSolutions = bestSolutionsCount(scores, highScore);
+        var checkForBestSol = whatsTheBest(scores, costs, highScore);
+        console.log("Колличество проведенных испытаний: " + scores.length)
+        console.log("Наивысший результат испитания равен: " + highScore);
+        console.log("Номера лучших результатов: " + forBestSolutions);
+        console.log("Самый выгодный образец № " + checkForBestSol);
+
+
+
+
+    </script>
+
+
+
+</head>
+<body>
+    
+</body>
+</html>
