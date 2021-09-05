@@ -32,14 +32,14 @@
             return highScore;
         }
         function bestSolutionsCount(scores, highscore) {
-            var tratra = [];
+            var allBestResults = [];
             for (var i = 0; i < scores.length; i++) {
                 if (scores[i] == highscore) {
-                    tratra.push[i];
+                    allBestResults.push(i);
                 }
             }
-            return tratra;
-        }
+            return allBestResults;
+          }
         function whatsTheBest(scores, costs, bestScore) {
             var cost = 200;
             var index;
@@ -56,10 +56,10 @@
         var highScore = highScoreAndList(scores);
         var forBestSolutions = bestSolutionsCount(scores, highScore);
         var checkForBestSol = whatsTheBest(scores, costs, highScore);
-        console.log("Колличество проведенных испытаний: " + scores.length)
+        console.log("Колличество проведенных испытаний: " + scores.length);
         console.log("Наивысший результат испитания равен: " + highScore);
         console.log("Номера лучших результатов: " + forBestSolutions);
-        console.log("Самый выгодный образец № " + checkForBestSol);
+        console.log("Самый выгодный образец № " + checkForBestSol + ", результат которого составляет: " + costs[checkForBestSol]);
 
 
 

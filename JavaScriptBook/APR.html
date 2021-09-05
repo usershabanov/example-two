@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <script>
+
+                      var scores = [60, 50, 88, 58, 54, 54, 58, 50, 52, 54, 48, 88,
+                                    34, 55, 51, 52, 44, 51, 57, 64, 88, 55, 52, 61,
+                                    46, 88, 57, 52, 44, 18, 35, 53, 55, 88, 51, 55];
+
+                      var costs = [.25, .27, .25, .25, .25, .25,
+                                   .33, .31, .25, .29, .27, .21,
+                                   .31, .25, .25, .33, .21, .25,
+                                   .33, .25, .28, .25, .24, .22,
+                                   .20, .25, .30, .25, .24, .25,
+                                   .25, .25, .27, .25, .26, .17];
+
+
+
+
+                                   function getHighScore(scores) {
+                                       var highscore = 0;
+                                       var output;
+                                       for(var i = 0; i < scores.length; i++) {
+                                           output = "Test #" + i + " is " + scores[i];
+                                           document.write(output + "<br>");
+                                           if(scores[i] > highscore) {
+                                               highscore = scores[i];
+                                           }
+                                       }
+                                       return highscore;
+                                   }
+                                   var highScore = getHighScore(scores);
+                                   document.write("Total test: " + scores.length + "<br>")
+                                   document.write("The highest score is: " + highScore + "<br>");
+
+                                   function checkForAllHighScores(scores, highscore) {
+                                       var highScoreMass = [];
+                                       for(var i = 0; i < scores.length; i++) {
+                                           if(scores[i] == highscore) {
+                                               highScoreMass.push(i);
+                                           }
+                                       }
+                                       return highScoreMass;
+                                   }
+                                   var allHighScores = checkForAllHighScores(scores, highScore);
+                                   document.write("Here are all highscore numbers: " + allHighScores + "<br>");
+
+                                   function checkForMostCostEffective(scores, costs, highscore) {
+                                       var cost = 1000;
+                                       var index;
+                                       for(var i = 0; i < scores.length; i++) {
+                                           if(scores[i] == highscore) {
+                                               if(cost > costs[i]) {
+                                                   cost = costs[i];
+                                                   index = i;
+                                               }
+                                           }
+                                       }
+                                       return index;
+                                   }
+                                   var mostEffectiveResult = checkForMostCostEffective(scores, costs, highScore);
+                                   document.write("The most cost effective result #:" + mostEffectiveResult + " wich is " + costs[mostEffectiveResult] +  "<br>");
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
