@@ -9,8 +9,9 @@
         var secureSettings = {
             password: 2021,
             triesTillBlock: 3,
-            secureWord: "besya",
-            changes: "The password succesfully changed."
+            secureWord: "juja",
+            changes: "The password succesfully changed.",
+            enter: "You're welcome!"
         }
         function passwordSettings(settings) {
             var pass;
@@ -20,19 +21,36 @@
             if(settings.password == pass) {
                 secureWord = prompt("Enter secure word now");
                 if(settings.secureWord == secureWord) {
-                    alert("You're welcome!");
+                    alert(settings.enter);
+                    return settings.enter;
+
+                } else {
+                    alert("Wrong secure word, try again");
+                    settings.triesTillBlock = settings.triesTillBlock -1;      
                 }
             } else {
                 alert("Wrong password, try again");
                 settings.triesTillBlock = settings.triesTillBlock -1;
             }
             if(settings.triesTillBlock == 0) {
-                return "You enter the password three times wrong, your device is blocked!";
+                alert("You enter the password three times wrong, your device is blocked!");
             }
         }
     }
+    function updatePassword(settings) {
+        if(settings.triesTillBlock >= 1) {
+        var pass;
+        pass = prompt("Enter a new password here");
+        settings.password = pass;
+        alert(settings.changes);
+        alert("New password is " + settings.password);
+       // return settings.changes;
+        }
+    }
         var devicePassOptions = passwordSettings(secureSettings);
-        alert(devicePassOptions);
+       // alert(devicePassOptions);
+        var newPassword = updatePassword(secureSettings);
+       // alert(newPassword);
         
     </script>
 </head>
