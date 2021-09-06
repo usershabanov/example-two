@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var secureSettings = {
+            password: 2021,
+            triesTillBlock: 3,
+            secureWord: "besya",
+            changes: "The password succesfully changed."
+        }
+        function passwordSettings(settings) {
+            var pass;
+            var secureWord;
+            while(settings.triesTillBlock >= 1) {
+            pass = prompt("Enter your password");
+            if(settings.password == pass) {
+                secureWord = prompt("Enter secure word now");
+                if(settings.secureWord == secureWord) {
+                    alert("You're welcome!");
+                }
+            } else {
+                alert("Wrong password, try again");
+                settings.triesTillBlock = settings.triesTillBlock -1;
+            }
+            if(settings.triesTillBlock == 0) {
+                return "You enter the password three times wrong, your device is blocked!";
+            }
+        }
+    }
+        var devicePassOptions = passwordSettings(secureSettings);
+        alert(devicePassOptions);
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

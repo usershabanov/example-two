@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <script>
+
+        var colors = ["red", "blue", "yellow", "black", "pink", "green", "purple", "white", "gray", "brown", "orange"];
+        var tries = false;
+        var rand1 = Math.floor(Math.random() * colors.length);
+        var rand2 = Math.floor(Math.random() * rand1);
+        var result;
+        var rightQuess = 0;
+        //console.log(colors[rand1]);
+
+        while(tries == false) {
+            result = prompt("Try to guess the color: " + colors[rand1] + " or " + colors[rand2]);
+            if(colors[rand1] == result) {
+                alert("Right guess!");
+                rightQuess = rightQuess + 1;
+                console.log(rightQuess);
+            } else {
+                alert("You are wrong!");
+            }
+            if(rightQuess == 5) {
+                tries = true;
+                alert("You successful quess 5 times and won NOTHING :D");
+            }
+
+    }
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
