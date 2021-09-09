@@ -7,10 +7,10 @@
     <title>Document</title>
     <script>
         var eightBall =  {
-            index: 0,
+            index: 1,
             advice: ["yes", "no", "maybe", "not a chance"],
             shake: function() {
-                this.index = this.index + 1;
+                this.index += 1;
                 if(this.index >= this.advice.length) {
                     this.index = 0;
                 }

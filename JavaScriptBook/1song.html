@@ -15,16 +15,16 @@
             playing: false,
 
             play: function() {
-                if(this.playing = true) {
-                  //  this.playing = true;
-                    console.log("Playing " + song.name + " by " + song.artist);
+                if(!this.playing) {
+                    this.playing = true;
+                    console.log("Playing " + this.name + " by " + this.artist);
                 }
             },
 
             pause: function() {
-                this.playing = false;
-
-                
+                if(this.playing) {
+                    this.playing = false;
+                }
             }
         };
         song.play();

@@ -18,19 +18,36 @@
         horsePower: 60,
         passangers: 5,
         started: false,
+        fuel: 0,
 
         start: function() {
+            if(this.fuel > 0) {
             this.started = true;
+            alert("Engine started.")
+            } else {
+                alert("Out of fuel.")
+            }
         },
         stop: function() {
             this.started = false;
+            alert("Engine off");
         },
         drive: function() {
             if(this.started) {
-                alert(this.color + " " + this.model + " goes zoom zoom!");
+                if(this.fuel > 0) {
+                    alert(this.color + " " + this.model + " goes zoom zoom!");
+                    this.fuel = this.fuel - 1;
+                } else {
+                    alert("Oh not, out of fuel.");
+                    this.stop();
+                }
             } else {
                 alert("You need to start the engine first.");
             }
+        },
+        addFuel: function(amount) {
+            this.fuel = this.fuel + amount;
+            alert("Fuel Added.");
         }
     };
     var chevy = {
@@ -83,13 +100,21 @@ drive: function() {
  };
  cadi.start();
  cadi.drive();
+ cadi.addFuel(3);
+ cadi.start();
+ cadi.drive();
  cadi.stop();
- chevy.start();
+ cadi.drive();
+ cadi.start();
+ cadi.drive();
+ cadi.drive();
+ cadi.drive();
+ /*chevy.start();
  chevy.drive();
  chevy.stop();
  taxi.start();
  taxi.drive();
- taxi.stop();
+ taxi.stop();*/
 
 </script>
 

@@ -12,7 +12,7 @@
             secureWord: "juja",
             changes: "The password succesfully changed.",
             enter: "You're welcome!"
-        }
+        };
         function passwordSettings(settings) {
             var pass;
             var secureWord;
@@ -26,11 +26,11 @@
 
                 } else {
                     alert("Wrong secure word, try again");
-                    settings.triesTillBlock = settings.triesTillBlock -1;      
+                    settings.triesTillBlock -= 1;      
                 }
             } else {
                 alert("Wrong password, try again");
-                settings.triesTillBlock = settings.triesTillBlock -1;
+                settings.triesTillBlock -= 1;
             }
             if(settings.triesTillBlock == 0) {
                 alert("You enter the password three times wrong, your device is blocked!");
